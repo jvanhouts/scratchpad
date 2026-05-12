@@ -1,0 +1,98 @@
+@import '@fontsource-variable/figtree';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: 255 255 255;
+    --color-accent: 0 0 0;
+    --color-ink: 0 0 0;
+    --color-muted: 0 0 0;
+    --color-card: 255 255 255;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    min-height: 100%;
+    background: rgb(var(--color-background));
+  }
+
+  body {
+    min-height: 100%;
+    margin: 0;
+    font-family: 'Figtree Variable', Figtree, ui-sans-serif, system-ui, sans-serif;
+    color: rgb(var(--color-ink));
+    background:
+      radial-gradient(circle at 85% 8%, rgb(18 91 0 / 0.10), transparent 28rem),
+      radial-gradient(circle at 8% 18%, rgb(18 91 0 / 0.06), transparent 20rem),
+      rgb(var(--color-background));
+    transition: background 0.5s;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+  }
+}
+
+@layer components {
+  .card-shadow {
+    box-shadow: 0 0 3px rgb(18 91 0 / 0.25);
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent;
+  }
+
+  .site-header {
+    @apply w-full max-w-5xl px-8 pt-6 lg:px-0;
+  }
+
+  .site-toggle {
+    @apply flex w-fit items-center gap-1 rounded-full border border-accent/10 bg-background p-1 text-lg font-semibold shadow-sm;
+    box-shadow: 0 0 3px rgb(18 91 0 / 0.20);
+  }
+
+  .site-toggle__item {
+    @apply rounded-full px-6 py-2 text-accent/70 no-underline transition-colors;
+  }
+
+  .site-toggle__item:hover {
+    @apply bg-accent/5 text-accent;
+  }
+
+  .site-toggle__item--active {
+    @apply bg-accent text-background shadow-sm;
+  }
+
+  .hero-thoughts {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero-thoughts__glass {
+    position: absolute;
+    inset: 0;
+    background: rgb(255 255 255 / 0.08);
+    backdrop-filter: blur(14px) saturate(1.02);
+    -webkit-backdrop-filter: blur(14px) saturate(1.02);
+    z-index: 1;
+  }
+
+  .hero-thoughts__title {
+    position: relative;
+    z-index: 2;
+    align-self: flex-start;
+    width: fit-content;
+    max-width: min(100%, 22ch);
+    padding: 0.35em 0.5em;
+    border-radius: 0.7rem;
+    background: rgb(255 255 255 / 0.42);
+    backdrop-filter: blur(10px) saturate(1.05);
+    -webkit-backdrop-filter: blur(10px) saturate(1.05);
+  }
+}

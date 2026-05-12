@@ -1,0 +1,53 @@
+---
+title: Navigating AI Subscription Hell
+description: A placeholder field guide for keeping AI tools useful without letting subscription sprawl take over.
+date: 2026-05-12
+slug: navigating-ai-suiption-hell
+---
+
+import { Callout } from '../../components/mdx-components';
+
+## The problem
+
+Every useful AI tool seems to arrive with a slightly different subscription, context window, model picker, and billing page. The hard part is not finding tools. The hard part is deciding which ones deserve a permanent place in the workflow.
+
+[GitHub](https://github.com/jvanhouts) is still the source of truth for code, but the surrounding toolchain keeps changing.
+
+<Callout>
+This is starter MDX content. Replace it with the real post when the argument is sharper than the title.
+</Callout>
+
+## A small operating rule
+
+Keep a tool only when it clearly wins one of these jobs:
+
+- It saves time every week.
+- It improves the quality of the work.
+- It removes a specific recurring annoyance.
+
+If it does not do one of those things, it is probably just another monthly charge.
+
+## Example checklist
+
+```ts
+type SubscriptionDecision = {
+  tool: string;
+  recurringUse: boolean;
+  replacesAnotherTool: boolean;
+  worthKeeping: boolean;
+};
+
+export function shouldKeepTool(decision: SubscriptionDecision) {
+  return decision.recurringUse && (decision.replacesAnotherTool || decision.worthKeeping);
+}
+```
+
+> The expensive subscription is not always the problem. The quiet pile-up of medium-use tools is usually worse.
+
+## Next pass
+
+The real post should compare categories instead of brands: coding agents, chat interfaces, research tools, image tools, and local models. That keeps the piece useful even as the current leaderboard changes.
+
+<Callout tone="warning">
+Placeholder conclusion: audit the stack monthly, cancel aggressively, and keep notes on what actually helped ship work.
+</Callout>
