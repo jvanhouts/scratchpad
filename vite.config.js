@@ -2,6 +2,7 @@ import mdx from '@mdx-js/rollup';
 import react from '@vitejs/plugin-react';
 import matter from 'gray-matter';
 import remarkFrontmatter from 'remark-frontmatter';
+import remarkGfm from 'remark-gfm';
 import { defineConfig } from 'vite';
 function mdxFrontmatter() {
     return {
@@ -26,7 +27,7 @@ export default defineConfig({
         mdxFrontmatter(),
         mdx({
             providerImportSource: '@mdx-js/react',
-            remarkPlugins: [remarkFrontmatter],
+            remarkPlugins: [remarkFrontmatter, remarkGfm],
         }),
         react(),
     ],

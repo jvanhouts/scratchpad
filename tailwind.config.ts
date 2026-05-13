@@ -14,7 +14,7 @@ export default {
         card: 'rgb(var(--color-card) / <alpha-value>)',
       },
       fontFamily: {
-        sans: ['Figtree Variable', 'Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Nunito', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         card: '1rem',

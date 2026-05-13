@@ -13,8 +13,11 @@ export function PostPage() {
 
   return (
     <article className="mx-auto max-w-3xl">
-      <Link className="focus-ring inline-flex rounded-full text-sm font-semibold text-accent underline" to="/">
-        Back to posts
+      <Link
+        className="inline-flex rounded-full text-sm font-semibold text-accent underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+        to="/"
+      >
+        Home
       </Link>
 
       <header className="mt-10 border-b border-accent/15 pb-8">
@@ -23,7 +26,7 @@ export function PostPage() {
         <p className="mt-5 text-xl leading-8 text-ink/80">{post.description}</p>
       </header>
 
-      <div className="prose prose-lg prose-green mt-10 max-w-none text-ink prose-headings:text-accent prose-a:text-accent">
+      <div className="prose prose-lg prose-green mt-10 max-w-none text-ink prose-headings:text-accent prose-a:text-accent prose-table:w-full prose-table:border-collapse prose-th:border prose-th:border-accent/20 prose-th:bg-accent/5 prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-td:border prose-td:border-accent/15 prose-td:px-4 prose-td:py-2">
         <Component />
       </div>
     </article>

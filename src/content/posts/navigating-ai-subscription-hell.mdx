@@ -2,52 +2,134 @@
 title: Navigating AI Subscription Hell
 description: A placeholder field guide for keeping AI tools useful without letting subscription sprawl take over.
 date: 2026-05-12
-slug: navigating-ai-suiption-hell
+slug: navigating-ai-subscription-hell
 ---
 
 import { Callout } from '../../components/mdx-components';
 
-## The problem
+# Executive summary
 
-Every useful AI tool seems to arrive with a slightly different subscription, context window, model picker, and billing page. The hard part is not finding tools. The hard part is deciding which ones deserve a permanent place in the workflow.
+AI coding subscriptions are becoming expensive, overlapping, and hard to compare. My current workflow uses different tools for different contexts: Claude Code and Cursor for work, Codex through ChatGPT Plus for personal projects, and OpenCode as a low-cost experimental option.
 
-[GitHub](https://github.com/jvanhouts) is still the source of truth for code, but the surrounding toolchain keeps changing.
+The core question is not simply “which tool is best?” It is: which combination gives me the best output, predictable monthly costs, minimal workflow disruption, and the least future vendor lock-in?
 
-<Callout>
-This is starter MDX content. Replace it with the real post when the argument is sharper than the title.
-</Callout>
+My conclusion is that there is not 1 definitive “winner”. My current strategy is being comfortable with various tools/vendors, and being flexible with switching between them. When, for example, OpenAI launches a new model and Cursor offers it for free for a week as a promotion, I choose to work with that. For my job however, I can’t just switch to any random provider or model whenever I feel like it; I feel like trying out a random Chinese model or using Codex/a vendor we don’t actively use yet, would be bad for security reasons.
 
-## A small operating rule
+At the time of writing, Claude Code and Codex are tied as my favorite services. Claude Code feels strongest for focused work inside an existing codebase, while Codex gives excellent value for personal projects when paired with ChatGPT for planning, design critique, and general app discussions.
 
-Keep a tool only when it clearly wins one of these jobs:
+![Claude Code and Codex](/images/catgirl.png "Claude Code and Codex")
 
-- It saves time every week.
-- It improves the quality of the work.
-- It removes a specific recurring annoyance.
+# Why this matters
 
-If it does not do one of those things, it is probably just another monthly charge.
+I like being in control of my development workflow. What I want to avoid is settling into a setup that works well, only to be surprised later by aggressive price changes, restrictive limits, or a workflow that is too dependent on one vendor.
 
-## Example checklist
+Current AI assistant pricing still feels unstable. Many providers appear to be subsidizing heavy usage through subscriptions, which makes me skeptical that today’s pricing can remain unchanged indefinitely. That makes cost predictability and portability just as important as raw model quality.
 
-```ts
-type SubscriptionDecision = {
-  tool: string;
-  recurringUse: boolean;
-  replacesAnotherTool: boolean;
-  worthKeeping: boolean;
-};
+# How I use these tools
 
-export function shouldKeepTool(decision: SubscriptionDecision) {
-  return decision.recurringUse && (decision.replacesAnotherTool || decision.worthKeeping);
-}
-```
+Even though I have different applications for different tools (e.g. some I use for work, some for personal projects) I feel like I can still make a fair comparison, but this is something to keep in mind when reading this article.
 
-> The expensive subscription is not always the problem. The quiet pile-up of medium-use tools is usually worse.
+## Work
 
-## Next pass
+### Claude Code
 
-The real post should compare categories instead of brands: coding agents, chat interfaces, research tools, image tools, and local models. That keeps the piece useful even as the current leaderboard changes.
+I use Claude Code with Sonnet 4.6 for almost everything work-related. It performs best when I give it strong context, point it toward existing patterns in the codebase, and keep prompts targeted.
 
-<Callout tone="warning">
-Placeholder conclusion: audit the stack monthly, cancel aggressively, and keep notes on what actually helped ship work.
-</Callout>
+A typical prompt looks like:
+
+> Implement feature X. Look at feature Y in the codebase for reference, since it follows a similar pattern.
+> 
+
+This usually produces excellent results and often works in one shot. Especially when the codebase already has project-specific skills Claude can utilize.
+
+### Cursor
+
+Cursor is more variable for me. I tend to check the model pricing page before choosing a model, then pick the strongest affordable option for the task. I currently use GPT-5.3 Codex with medium reasoning.
+
+The cheaper options, such as Auto and Composer 2, usually do not get me the results I want for serious programming tasks.
+
+Reference: [Cursor model pricing](https://cursor.com/docs/models-and-pricing)
+
+## Personal projects
+
+### Codex via ChatGPT Plus
+
+For personal projects, I use GPT-5.3 Codex with medium reasoning. It lasts much longer than using the latest flagship model with low reasoning, where I burn through the 5-hour limit too quickly. GPT-5.3 gives me roughly five times as much usable runway.
+
+A very underrated workflow: use ChatGPT for planning, general discussion, design ideas, and UI critique before spending Codex tokens. Uploading screenshots or mockups to ChatGPT is especially useful for iterating on app design without burning through coding-agent usage.
+
+### OpenCode
+
+I have been liking GLM-5.1 in OpenCode. It usually takes more prompts to reach similar results, but the costs are low enough that this does not bother me much.
+
+Other models, such as Minimax 2.7, are interesting too, but for programming tasks GLM-5.1 generally feels more reliable.
+
+# Current subscription overview
+
+| Service | Subscription price | Total billed monthly | Used for work |
+| --- | --- | --- | --- |
+| Cursor Pro | $20 plan with billing enabled | ~$150 with my regular workflow | ✅ |
+| Claude Code Max | $100 plan | $100 | ✅ |
+| OpenCode Zen | $20 credit | $20 | Personal only |
+| ChatGPT Plus, including Codex usage | $20 plan | $20 | Personal only |
+
+# Early findings
+
+## 1. Claude Code is the strongest workhorse for focused implementation
+
+Claude Code works best when the task is well-scoped and the surrounding context is clear. When I can point it toward an existing implementation pattern, it often produces production-useful work with very little back-and-forth.
+
+## 2. Cursor is powerful, but cost control requires active management
+
+Cursor can be excellent, but the experience depends heavily on which model I choose. With billing enabled, the real monthly cost can drift far beyond the base subscription price. For my workflow, Cursor Pro behaves less like a $20 product and more like a ~$150 monthly tool.
+
+## 3. Codex has excellent personal-project value
+
+Codex through ChatGPT Plus is currently one of the best deals in my setup. The trick is not to use it for everything. I get much better mileage by using ChatGPT for planning and design discussion first, then Codex for implementation.
+
+## 4. OpenCode is promising as a low-cost fallback
+
+OpenCode is not always as efficient as Claude Code or Codex, but the low cost changes the equation. Needing a few extra prompts matters less when the marginal cost is tiny.
+
+# Decision criteria
+
+When comparing these tools, I care about:
+
+- Quality of first attempt
+- Cost predictability
+- Monthly ceiling or risk of surprise billing
+- Speed from prompt to usable implementation
+- Ability to work with an existing codebase
+- Portability of workflow
+- Risk of vendor lock-in
+- Whether the tool is useful for work, personal projects, or both
+
+# Current ranking
+
+## Shared #1: Claude Code and Codex
+
+Claude Code is my favorite for professional, codebase-aware implementation. Codex is my favorite for personal projects because the value is excellent when paired with ChatGPT for planning and design iteration.
+
+## Strong but expensive: Cursor
+
+Cursor remains useful, but I need to actively manage model choice and billing. It is not a simple flat-cost subscription in practice.
+
+## Budget experiment: OpenCode
+
+OpenCode is worth keeping around because it is cheap, flexible, and improving. It is not my default choice for critical work, but it is valuable as a secondary option.
+
+# Open questions
+
+- Which tools remain worth paying for if prices rise?
+- Can I reduce overlap between Cursor, Claude Code, and Codex?
+- Which workflows are easiest to move between vendors?
+- What is the true monthly cost per useful feature shipped?
+- Which tool gives the best results when working in a large, existing codebase?
+
+# Next steps
+
+- Track actual monthly spend for each tool over at least one billing cycle.
+- Add notes on task types: bug fixes, new features, refactors, UI work, planning, and debugging.
+- Score each service across quality, cost, speed, and lock-in risk.
+- Decide whether Cursor is still worth keeping if the real cost stays near $150/month.
+- Revisit this comparison after another month of usage.
