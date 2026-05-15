@@ -8,6 +8,7 @@
   :root {
     --color-background: 255 255 255;
     --color-accent: 0 0 0;
+    --color-primary: 58 18 47;
     --color-ink: 0 0 0;
     --color-muted: 0 0 0;
     --color-card: 255 255 255;
@@ -26,7 +27,7 @@
     min-height: 100%;
     margin: 0;
     font-family: Nunito, ui-sans-serif, system-ui, sans-serif;
-    color: rgb(var(--color-ink));
+    color: rgb(var(--color-primary));
     background:
       radial-gradient(circle at 85% 8%, rgb(18 91 0 / 0.10), transparent 28rem),
       radial-gradient(circle at 8% 18%, rgb(18 91 0 / 0.06), transparent 20rem),

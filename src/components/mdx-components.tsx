@@ -5,6 +5,12 @@ type CalloutProps = {
   tone?: 'note' | 'warning';
 };
 
+type ArticleImageProps = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
 export function Callout({ children, tone = 'note' }: CalloutProps) {
   return (
     <aside
@@ -16,7 +22,26 @@ export function Callout({ children, tone = 'note' }: CalloutProps) {
   );
 }
 
+export function ArticleImage({ src, alt, caption }: ArticleImageProps) {
+  return (
+    <figure className="not-prose my-10">
+      <img
+        src={src}
+        alt={alt}
+        className="w-full rounded-2xl border border-black/5 object-cover"
+      />
+
+      {caption && (
+        <figcaption className="mt-3 text-center text-sm leading-relaxed text-black/50">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
 export const mdxComponents = {
   Callout,
+  ArticleImage,
   a: (props: ComponentPropsWithoutRef<'a'>) => <a {...props} target={props.href?.startsWith('http') ? '_blank' : undefined} rel={props.href?.startsWith('http') ? 'noreferrer' : undefined} />,
 };

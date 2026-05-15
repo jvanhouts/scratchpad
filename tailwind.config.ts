@@ -9,6 +9,7 @@ export default {
       colors: {
         background: 'rgb(var(--color-background) / <alpha-value>)',
         accent: 'rgb(var(--color-accent) / <alpha-value>)',
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
         ink: 'rgb(var(--color-ink) / <alpha-value>)',
         muted: 'rgb(var(--color-muted) / <alpha-value>)',
         card: 'rgb(var(--color-card) / <alpha-value>)',
