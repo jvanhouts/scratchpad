@@ -3,7 +3,7 @@
   "configVersion": 0,
   "workspaces": {
     "": {
-      "name": "jvanhouts-blog",
+      "name": "scratchpad",
       "dependencies": {
         "@fontsource/nunito": "^5.1.1",
         "@mdx-js/react": "^3.1.1",

@@ -1,6 +1,6 @@
-# jvanhouts blog
+# Scratchpad
 
-A small static React blog built with Vite, TypeScript, Tailwind CSS, and MDX.
+A small static React scratchpad built with Vite, TypeScript, Tailwind CSS, and MDX.
 
 ## Run locally
 
@@ -49,7 +49,7 @@ The static site is emitted to `dist/`. The GitHub Actions workflow in `.github/w
 The custom domain is configured in `public/CNAME`:
 
 ```txt
-blog.jvanhouts.com
+scratchpad.jvanhouts.com
 ```
 
-In the GitHub repository settings, enable GitHub Pages with GitHub Actions as the source and set the custom domain to `blog.jvanhouts.com`. Make sure DNS points `blog.jvanhouts.com` at GitHub Pages.
+In the GitHub repository settings, enable GitHub Pages with GitHub Actions as the source and set the custom domain to `scratchpad.jvanhouts.com`. Make sure DNS points `scratchpad.jvanhouts.com` at GitHub Pages.
