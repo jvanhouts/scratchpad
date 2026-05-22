@@ -1,0 +1,15 @@
+{
+  "name": "🐱 Jess's scratchpad",
+  "short_name": "Scratchpad",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eff1f5",
+  "theme_color": "#91edd8",
+  "icons": [
+    {
+      "src": "/favicon-paw.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
